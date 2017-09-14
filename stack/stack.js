@@ -32,4 +32,4 @@ class Stack {
   }
 }
 
-//ex: let stack = new Stack();
+let stack = new Stack();
