@@ -12,18 +12,22 @@ class CircularQueue {
   }
 
   isEmpty() {
-    return this.head === -1
+    return this.head === -1;
   }
 
   size() {
-    return (this.capacity - this.head - this.tail + 1) % this.capacity
+    return (this.capacity - this.head - this.tail + 1) % this.capacity;
   }
 
   enqueue(data) {
-    if (this.isFull()) return new Error('Queue is fill')
-    this.tail = (this.tail + 1) % this.capacity
-    if (this.head === -1) this.head = this.tail
-    this.data[this.tail] = data
+    if (this.isFull()) {
+      return new Error('Queue is fill');
+    } 
+    this.tail = (this.tail + 1) % this.capacity;
+    if (this.head === -1) {
+      this.head = this.tail;
+    }
+    this.data[this.tail] = data;
   }
 
   dequeue() {
@@ -32,9 +36,11 @@ class CircularQueue {
     } 
     let data = this.data[this.head]
     (this.head === this.tail) ? this.head = this.tail = -1 : this.head = (this.head + 1) % this.capacity;
-    return data
+    return data;
   }
 }
+
+module.exports = CircularQueue;
 
 //- Example
 var q = new CircularQueue(3)

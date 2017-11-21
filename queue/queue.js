@@ -32,4 +32,7 @@ class Queue {
   }
 }
 
-let queue = new Queue();
+module.exports = Queue;
+
+// Example 
+// let queue = new Queue();
